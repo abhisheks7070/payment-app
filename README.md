@@ -24,3 +24,6 @@ This is a payment application website built using Express.js for the server runt
 
    ```bash
    git clone https://github.com/abhisheks7070/payment-app.git
+2. **Run this command to start the app**
+    ```bash
+   cd frontend; npm run dev
