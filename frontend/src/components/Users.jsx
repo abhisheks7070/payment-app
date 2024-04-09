@@ -11,13 +11,16 @@ export const Users = () => {
     const [filter, setFilter] = useState("");
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filter)
+        axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filter,{
+            headers: {
+                authorization: "Bearer " + localStorage.getItem("token")
+            }})
             .then(response => {
                 setUsers(response.data.user)
             })
     }, [filter])
 
-    return <>
+    return (<>
         <div className="font-bold mt-6 text-lg">
             Users
         </div>
@@ -29,7 +32,7 @@ export const Users = () => {
         <div>
             {users.map(user => <User key={user._id} user={user} />)}
         </div>
-    </>
+    </>)
 }
 
 function User({user}) {

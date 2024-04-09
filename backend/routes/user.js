@@ -60,25 +60,19 @@ const signinBody = zod.object({
 })
 
 router.post("/signin", async (req, res) => {
-    const { success } = signinBody.safeParse(req.body)
-    if (!success) {
-        return res.status(411).json({
-            message: "Email already taken / Incorrect inputs"
-        })
-    }
-
+  
     const user = await User.findOne({
         username: req.body.username,
         password: req.body.password
     });
 
     if (user) {
-        const token = jwt.sign({
-            userId: user._id
+        const token = jwt.sign(
+            {userId: user._id
         }, JWT_SECRET);
-  
+        const firstName = user.firstName;
         res.json({
-            token: token
+            token: token, firstName
         })
         return;
     }
