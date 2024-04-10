@@ -13,6 +13,7 @@ export const Signin = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [err, setErr] = useState("");
   const navigate = useNavigate();
 
     return <div className="bg-slate-300 h-screen flex justify-center">
@@ -24,7 +25,8 @@ export const Signin = () => {
         <InputBox onChange = {(e)=>{setPassword(e.target.value)}} placeholder="123456" label={"Password"} />
         <div className="pt-4">
           <Button onClick={async () => {
-            const response = await axios.post("http://localhost:3000/api/v1/user/signin", {
+            try {
+              const response = await axios.post("http://localhost:3000/api/v1/user/signin", {
               username,
               password
             });
@@ -32,7 +34,12 @@ export const Signin = () => {
             localStorage.setItem("token", response.data.token)
             localStorage.setItem("firstName", response.data.firstName)
             navigate("/dashboard")
+            } catch (e) {
+              setErr("Invavid Username OR password")
+            }
+            
           }}  label={"Sign in"} />
+          <div className="text-red-500 font-bold">{err}</div>
         </div>
         <BottomWarning label={"Don't have an account?"} buttonText={"Sign up"} to={"/"} />
       </div>
