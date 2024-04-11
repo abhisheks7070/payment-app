@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
- mongoose.connect("mongodb+srv://sabhishek7070:Ttorres9@cluster0.3githov.mongodb.net/Payment-app")  //put your own mongoDB database URL
+ mongoose.connect("")  //put your own mongoDB database URL
 
 
 const userSchema = new mongoose.Schema({
