@@ -1,7 +1,8 @@
 
 const mongoose = require('mongoose');
+require("dotenv").config();
 
- mongoose.connect("mongodb+srv://sabhishek7070:Ttorres9@cluster0.3githov.mongodb.net/Payment-app")  //put your own mongoDB database URL
+ mongoose.connect(process.env.MONGODB_URI)  //put your own mongoDB database URL
 
 
 const userSchema = new mongoose.Schema({
