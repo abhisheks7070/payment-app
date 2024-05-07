@@ -14,7 +14,8 @@ export const Dashboard = () => {
     const cancel = searchParams.get("cancel");
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/v1/account/balance", {
+        // axios.get("http://localhost:3000/api/v1/account/balance", {
+        axios.get("https://payment-app-backend-bcdb.onrender.com/api/v1/account/balance", {
             headers: {
                 authorization: "Bearer " + localStorage.getItem("token")
             }

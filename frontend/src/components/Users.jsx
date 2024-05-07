@@ -10,7 +10,8 @@ export const Users = () => {
     const [filter, setFilter] = useState("");
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filter,{
+        // axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filter,{
+        axios.get("https://payment-app-backend-bcdb.onrender.com/api/v1/user/bulk?filter=" + filter,{
             headers: {
                 authorization: "Bearer " + localStorage.getItem("token")
             }})
