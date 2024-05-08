@@ -36,7 +36,7 @@ export const Signin = () => {
             localStorage.setItem("firstName", response.data.firstName)
             navigate("/dashboard")
             } catch (e) {
-              setErr("Invavid Username OR password")
+              setErr("Invalid Username OR password")
             }
             
           }}  label={"Sign in"} />
