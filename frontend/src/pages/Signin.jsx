@@ -18,9 +18,9 @@ export const Signin = () => {
 
     return <div className="bg-slate-300 h-screen flex justify-center">
     <div className="flex flex-col justify-center">
-    <div className="flex text-red-500">Please wait for few seconds after pressing the Signin button as this site is using free service for running its server.</div>
 
       <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
+    <div className="flex text-red-500">Please wait for few seconds after pressing the Signin button as this site is using free service for running its server.</div>
         <Heading label={"Sign in"} />
         <SubHeading label={"Enter your credentials to access your account"} />
         <InputBox onChange = {(e)=>{setUsername(e.target.value)}} placeholder="Email" label={"Email"} />
