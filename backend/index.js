@@ -5,10 +5,10 @@ const rootRouter = require("./routes/index");
 
 const app = express();
 
-const corsOptions = {
-    // origin: "http://localhost:5173" // frontend URI (ReactJS)
-    origin: "https://mywallet-ny2d.onrender.com" // frontend URI (ReactJS)
-}
+// const corsOptions = {
+//     // origin: "http://localhost:5173" // frontend URI (ReactJS)
+//     origin: "https://mywallet-ny2d.onrender.com" // frontend URI (ReactJS)
+// }
 
 app.use(cors());
 // app.use(cors(corsOptions));
